@@ -14,7 +14,7 @@ class Transfer
   end
 
   def execute_transaction
-    @sender.balance > @amount && @status == "pending" ? @receiver.deposit(@amount) && (@sender.balance -= @amount) && @status = "complete" :
+    (@sender.balance > @amount) && @status == "pending" ? @receiver.deposit(@amount) && (@sender.balance -= @amount) && @status = "complete" :
     @status = "rejected" && "Transaction rejected. Please check your account balance."
   end
 end
