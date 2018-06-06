@@ -9,7 +9,7 @@ class Transfer
     @status = "pending";
   end
 
-  def valid?(sender, receiver)
-    sender.valid? && reciever.valid?
+  def valid?
+    @sender.valid? && @reciever.valid?
   end
 end
